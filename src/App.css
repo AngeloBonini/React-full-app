@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Righteous&display=swap');
 
 * {
   margin: 0;
@@ -17,8 +17,8 @@ body {
 }
 
 body, input, button {
-  font-family: 'Source Sans Pro', sans-serif;;
-  font-size: 14px;
+  font-family: 'Righteous', cursive;;
+  font-size: 15px;
 }
 
 .header {
@@ -29,6 +29,3 @@ body, input, button {
   padding-left: 25px;
 }
 
-.html[theme='dark-mode']{
-  filter: invert(1) hue-rotate(180deg);
-}

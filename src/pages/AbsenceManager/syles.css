@@ -72,7 +72,7 @@ button {
   }
   
   .absences__export button {
-    background-color: #FF9419;
+    background-color: #0e52d1;
     border: 1px solid #F2F2F2;
     width: 180px;
     height: 39px;
@@ -97,7 +97,7 @@ button {
   }
   
   .absences__table th {
-    background: #FF9419;
+    background: #1928ff;
     color: white;
     height: 51px;
     display: flex;
