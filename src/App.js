@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="header">
+        <img src={ require('./assets/logo_crewmeister_white.svg') }
+          alt="company logo" height="15px" width="152px"
+        />
+      </div>
+      <div className="content">
+        <Routes />
+      </div>
     </div>
   );
 }
