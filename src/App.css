@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Prociono&family=Righteous&family=Varela+Round&display=swap');
 
 * {
   margin: 0;
@@ -12,20 +12,16 @@ html, body, #root {
 }
 
 body {
-  background: #fff;
+  background: rgb(187, 183, 183);
   -webkit-font-smoothing: antialiased !important;
+  font-family: 'Righteous', cursive;;
+  font-size: 20px;
 }
 
-body, input, button {
-  font-family: 'Righteous', cursive;;
+
+button {
+  font-family: 'Krona One', sans-serif;
   font-size: 15px;
 }
 
-.header {
-  height: 57px;
-  background-color: #FF9419;
-  display: flex;
-  align-items: center;
-  padding-left: 25px;
-}
 

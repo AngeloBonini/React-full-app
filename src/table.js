@@ -1,85 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import download from 'downloadjs';
-import api from '../../services/api';
-// import './styles.css';
+import api from './services/api';
 import styled from 'styled-components';
 
 
 const StyledApp = styled.div`
 button {
     cursor: pointer;
-    font-weight: bold;
+    font-weight: light;
   }
   
-  .absences {
+  .title {
     padding: 25px;
     height: 100%;
   }
   
-  .absences__options {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 25px 0px;
-  }
-  
-  .absences__filters {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .absences__filters input {
-    width: 160px;
-    height: 39px;
-    background: #F2F2F2;
-    border-radius: 5px;
-    border: 1px solid #F2F2F2;
-    padding: 10px;
-    margin-right: 15px;
-    color: #4F4F4F;
-  }
-  
-  .absences__filters button.search {
-    background-color: #FF9419;
-    border: 1px solid #F2F2F2;
-    width: 80px;
-    height: 39px;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .absences__filters button {
-    width: 100px;
-    height: 39px;
-    font-weight: bold;
-    border: 1px solid #F2F2F2;
-  }
-  
-  .absences__filters button.inactive {
-    background-color: #F2F2F2;
-    color: #4F4F4F;
-  }
-  
-  .absences__filters button.active {
-    background-color: #FF9419;
-    color: white;
-  }
-  
-  .absences__filters button.left {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  .absences__filters button.right {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  
-  .absences__export {
+  .absences_download {
     align-items: flex-end;
   }
   
-  .absences__export button {
+  .absences_download button {
     background-color: #1928ff;
     border: 1px solid #F2F2F2;
     width: 180px;
@@ -88,23 +28,24 @@ button {
     border-radius: 5px;
   }
   
-  .absences__table-container {
+  .table-container {
     overflow: auto;
     height: calc(100vh - 300px);
   }
   
-  .absences__table {
+  .table {
     width: 100%;
     border-collapse: collapse;
     position: relative;
+    overflow-x:auto;
   }
   
-  .absences__table tr {
+  .table tr {
     display: flex;
     justify-content: space-between;
   }
   
-  .absences__table th {
+  .table th {
     background: #1928ff;
     color: white;
     height: 51px;
@@ -113,7 +54,7 @@ button {
     width: 100%;
   }
   
-  .absences__table span {
+  .table span {
     margin: auto 0;
   }
   
@@ -145,22 +86,22 @@ export default function AbsenceManager() {
   }
 
 
-  async function handleExport() {
+  async function downloadIcs() {
     const res = await api.get('/');
-    download(res.data, 'absences.ics');
+    download(res.data, 'calendar.ics');
   }
 
   return (
       <StyledApp>
-    <div className="absences">
+    <div className="title">
       <h1>Absence Calendar</h1>
-        <div className="absences__export">
-          <button onClick={ () => handleExport() }>Export Calendar</button>
+        <div className="absences_download">
+          <button onClick={ () => downloadIcs() }>Download Calendar</button>
         </div>
       </div>
-      <div className="absences__table-container">
+      <div className="table-container">
         { 
-          <table className="absences__table">
+          <table className="table">
             <tbody>
               <tr>
                 <th><span>Member</span></th>
